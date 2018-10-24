@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="game.css">
+  </head>
+  <body>
+
+    <div class="game" id="game">
+
+<img class="Uki7VJnBL9pwH_BIKUOf_" src="https://avatanplus.com/files/resources/mid/572b21e062305154807c5492.png" data-reactid="4">
+
+      <h1>Сколько Вы тратите на кофе в год?</h1>
+        <label for="cup"><h2>Сколько чашек кофе в неделю вы покупаете?</h2></label>
+      <div id="cup">
+      <select name="cup" id="cup"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option>
+        <option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option>
+        <option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option>
+        <option value="22">22</option>
+
+      </select>
+    </div>
+
+    <label for="price"><h2>Средняя цена за вашу чашку кофе</h2></label>
+    <div id="price">
+      <select name="price" id="price">
+        <option value="80">80</option><option value="100">100</option><option value="150">150</option><option value="180">180</option><option value="200">200</option><option value="230">230</option>
+        <option value="250">250</option><option value="280">280</option><option value="300">300</option><option value="350">350</option><option value="400">400</option>
+      </select>
+    </div>
+
+    <div class="btn_block">
+      <button class="btn_calc" onclick="calc()" style="background-color: rgb(183, 139, 92);">Рассчитать</button>
+    </div>
+
+  </div>
+
+  <div id="res" style="display: none;">
+  </div>
+
+  <script>
+      function calc() {
+        var cup = document.getElementById('cup');
+        var price = document.getElementById('price');
+
+        var result = Math.round((cup.value * price.value) * 48);
+
+        console.log(result);
+
+        document.getElementById('res').innerHTML = "<h1>За год вы потратили на кофе " + result + " рублей!!!!!!!!!!!</h1>";
+        document.getElementById('game').style['display'] = 'none';
+        document.getElementById('res').style['display'] = 'block';
+      };
+  </script>
+
+  </body>
+</html>
